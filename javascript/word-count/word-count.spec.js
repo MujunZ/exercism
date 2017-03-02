@@ -48,7 +48,7 @@ describe('count()', function() {
     expect(words.count('Joe can\'t tell between \'large\' and large.')).toEqual(expectedCounts);
   });
 
-  xit('counts properly international characters', function() {
+  it('counts properly international characters', function() {
     var expectedCounts = { 'hola': 1, 'qué': 1, 'tal': 1, 'привет': 1 };
     expect(words.count('¡Hola! ¿Qué tal? Привет!')).toEqual(expectedCounts);
   });
@@ -63,17 +63,17 @@ describe('count()', function() {
     expect(words.count('hello\tworld')).toEqual(expectedCounts);
   });
 
-  xit('counts multiple spaces as one', function() {
+  it('counts multiple spaces as one', function() {
     var expectedCounts = { hello: 1, world: 1 };
     expect(words.count('hello  world')).toEqual(expectedCounts);
   });
 
-  xit('does not count leading or trailing whitespace', function() {
+  it('does not count leading or trailing whitespace', function() {
     var expectedCounts = { introductory: 1, course: 1 };
     expect(words.count('\t\tIntroductory Course      ')).toEqual(expectedCounts);
   });
 
-  xit('handles properties that exist on Object’s prototype', function() {
+  it('handles properties that exist on Object’s prototype', function() {
     var expectedCounts = { reserved: 1, words: 1, like: 1, constructor: 1, and: 1, tostring: 1, ok: 1 };
     expect(words.count('reserved words like constructor and toString ok?')).toEqual(expectedCounts);
   });
