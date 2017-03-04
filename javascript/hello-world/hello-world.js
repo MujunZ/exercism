@@ -7,20 +7,17 @@
 var HelloWorld = function() {};
 
 HelloWorld.prototype.hello = function(input) {
-//
-// YOUR CODE GOES HERE
-//
-	switch (input) {
-		case "Bob":
-			return "Hello, Bob!";
-			break;
-		case "Sally":
-			return "Hello, Sally!";
-			break;
-		default:
-			return "Hello, World!";
-			break;
+	var output;
+	if (typeof input === 'string') {
+		if (input === '') {
+			output = 'Hello, World!';
+		} else {
+			output = 'Hello, ' + input + '!';
+		}
+	} else {
+		throw new Error('input is not a string');
 	}
+	return output;
 };
 
 module.exports = HelloWorld;
