@@ -11,8 +11,7 @@ PhoneNumber.prototype.number = function() {
 	var arr = this.input.filter(function(digit) {
 		return !isNaN(digit) && digit != ' ';
 	});
-	var longerOrShorter = arr.length > 11 || arr.length < 10;
-	if (longerOrShorter) {
+	if (longerOrShorter = arr.length > 11 || arr.length < 10) {
 		this.number = '0000000000';
 	} else {
 		if (arr.length === 10) {
